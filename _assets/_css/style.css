@@ -1,0 +1,262 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes digitar {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #555;
+}
+
+.urna {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 50vw;
+  height: 400px;
+  background-color: #ccc;
+  padding: 30px;
+  border-radius: 5px;
+  gap: 15px;
+}
+
+.tela {
+  background: linear-gradient(to right, #e8e8e8, #c1c1c1);
+  border: 2px solid #555;
+  border-radius: 5px;
+  grid-row: 1/6;
+  grid-column: 1/3;
+  display: flex;
+  flex-direction: column;
+}
+
+.tela--cima {
+  flex: 1;
+  display: flex;
+}
+
+.tela--cima-esquerda {
+  flex: 1;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tela--cima-esquerda-voto {
+  height: 10%;
+  display: flex;
+  align-items: center;
+}
+
+.tela--cima-esquerda-cargo {
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tela--cima-esquerda-num {
+  height: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.num:first-child {
+  margin-left: 10px;
+}
+
+.num {
+  width: 30px;
+  height: 40px;
+  margin: 1px;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.num.digitar {
+  animation-name: digitar;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.tela--cima-esquerda-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.aviso--voto {
+  animation-name: digitar;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  display: flex;
+  justify-content: center;
+}
+
+.aviso--grande {
+  animation-name: digitar;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  font-size: 40px;
+  margin: auto auto;
+}
+
+.tela--cima-direita {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.imagem-titular {
+  border: 1px solid #000;
+  background-color: #fff;
+  text-align: center;
+  margin-bottom: 1px;
+  font-size: 15px;
+  width: 100px;
+}
+
+.imagem-titular img {
+  width: 100%;
+}
+
+.imagem-vice {
+  border: 1px solid #000;
+  background-color: #fff;
+  text-align: center;
+  font-size: 12px;
+  width: 90px;
+}
+
+.imagem-vice img {
+  width: 100%;
+}
+
+.tela--baixo {
+  border-top: 2px solid #000;
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.tela--baixo p:nth-child(2) {
+  padding-left: 10px;
+}
+
+.tela--baixo p:nth-child(3) {
+  padding-left: 20px;
+}
+
+.teclado {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  grid-row: 1/5;
+}
+
+.teclado--num {
+  background-color: #000;
+  box-shadow: 2px 2px 5px #333;
+  color: #fff;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.teclado--num:last-child {
+  grid-column: 2/3;
+}
+
+.botoes {
+  display: flex;
+  font-weight: bold;
+  align-items: flex-end;
+  font-size: 15px;
+}
+
+.botao--branco {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 0px 5px;
+  cursor: pointer;
+}
+
+.botao--corrige {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f09046;
+  margin-left: 5px;
+  padding: 0px 5px;
+  cursor: pointer;
+}
+
+.botao--confirma {
+  flex: 1.5;
+  height: 115%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #48c079;
+  margin-left: 5px;
+  padding: 0px 5px;
+  cursor: pointer;
+}
+
+.candidatos {
+  margin-top: 20px;
+  display: flex;
+  gap: 50px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ccc;
+}
+
+.vereador,
+.prefeito {
+  display: flex;
+  flex-direction: column;
+  line-height: 25px;
+}
+
+@media (max-width: 1200px) {
+  .urna {
+    width: 80vw;
+  }
+}
