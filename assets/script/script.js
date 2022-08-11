@@ -62,7 +62,7 @@ let attInterface = () => {
     if (etapaAtual === 0) {
       descricao.innerHTML = `<div class="info--nome">Nome: ${candidato.nome}</div>
     <div class="info--partido">Partido: ${candidato.partido}</div>`;
-      fotoTitular.src = `./_assets/_media/${candidato.img[0].url}`;
+      fotoTitular.src = `./assets/media/${candidato.img[0].url}`;
       legendaTitular.innerHTML = candidato.img[0].legenda;
       qS(".imagem-vice").style.display = "none";
     } else if (etapaAtual === 1) {
@@ -70,9 +70,9 @@ let attInterface = () => {
     <div class="info--partido">Partido: ${candidato.partido}</div>
     <div class="info--vice">Vice: ${candidato.vice}</div>`;
       qS(".imagem-vice").style.display = "block";
-      fotoTitular.src = `./_assets/_media/${candidato.img[0].url}`;
+      fotoTitular.src = `./assets/media/${candidato.img[0].url}`;
       legendaTitular.innerHTML = candidato.img[0].legenda;
-      fotoVice.src = `./_assets/_media/${candidato.img[1].url}`;
+      fotoVice.src = `./assets/media/${candidato.img[1].url}`;
       legendaVice.innerHTML = candidato.img[1].legenda;
     }
   } else {
@@ -188,12 +188,6 @@ let confirma = () => {
       };
       playSound();
       console.log(votos);
-      setTimeout(
-        (reload = () => {
-          document.location.reload(false);
-        }),
-        5000
-      );
     }
   }
 };
